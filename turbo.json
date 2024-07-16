@@ -1,28 +1,38 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "pipeline": {
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": [
+        "^lint"
+      ]
     },
     "check": {
-      "dependsOn": ["^check"]
+      "dependsOn": [
+        "^check"
+      ]
     },
     "dev": {
-      "dependsOn": ["^build"],
-      "outputs": [""],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": false
     },
-    "@laconic/utils": {
-      "outputs": [""]
-    },
+    "@laconic/utils": {},
     "create-neat": {
-      "dependsOn": ["@laconic/utils"],
-      "outputs": [""]
+      "dependsOn": [
+        "@laconic/utils"
+      ]
     }
   }
 }
